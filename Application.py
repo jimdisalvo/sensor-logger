@@ -1,6 +1,7 @@
 
 import time
 import FileLogger
+import ConsoleLogger
 import FakeSensor
 import PhSensor
 
@@ -14,9 +15,8 @@ def get_sensor():
         return PhSensor.AtlasSensor()
 
 if __name__ == '__main__':
-    logger = FileLogger.FileLogger('ph-sensor', ["DateTime", "pH"])
-
     sensor = get_sensor()
+    logger = ConsoleLogger.ConsoleLogger(["DateTime", "pH"])
 
     try:
         while True:
