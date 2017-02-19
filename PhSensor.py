@@ -27,14 +27,14 @@ class AtlasSensor:
     def get_value(self):
         return self.__query("R")
 
-    def calibrateMidPoint(self):
-        return self.__query("Cal,mid,7.00")
+    def calibrate_mid_point(self, midPointString):
+        return self.__query("Cal,mid," + midPointString)
 
-    def calibraryHighPoint(self):
-        return self.__query("Cal,high,10.00")
+    def calibrate_high_point(self, highPointString):
+        return self.__query("Cal,high," + highPointString)
 
-    def calibraryLowPoint(self):
-        return self.__query("Cal,low,3.50")
+    def calibrate_low_point(self, lowPointString):
+        return self.__query("Cal,low," + lowPointString)
 
     def set_i2c_address(self, addr):
         # set the I2C communications to the slave specified by the address

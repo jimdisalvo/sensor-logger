@@ -7,6 +7,7 @@ import PhSensor
 
 # Either FAKE or SENSOR
 SENSOR = 'FAKE'
+LOGGER = 'CONSOLE'
 
 def get_sensor():
     if SENSOR == 'FAKE':
@@ -14,9 +15,16 @@ def get_sensor():
     if SENSOR == 'SENSOR':
         return PhSensor.AtlasSensor()
 
+def get_logger():
+    fields = ["DateTime", "pH"]
+    if LOGGER == 'CONSOLE':
+        return ConsoleLogger.ConsoleLogger(fields)
+    if LOGGER == 'FILE':
+        return FileLogger.FileLogger('ph-sensor', fields)
+
 if __name__ == '__main__':
     sensor = get_sensor()
-    logger = ConsoleLogger.ConsoleLogger(["DateTime", "pH"])
+    logger = get_logger()
 
     try:
         while True:
