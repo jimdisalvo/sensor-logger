@@ -27,6 +27,15 @@ class AtlasSensor:
     def get_value(self):
         return self.__query("R")
 
+    def calibrateMidPoint(self):
+        return self.__query("Cal,mid,7.00")
+
+    def calibraryHighPoint(self):
+        return self.__query("Cal,high,10.00")
+
+    def calibraryLowPoint(self):
+        return self.__query("Cal,low,3.50")
+
     def set_i2c_address(self, addr):
         # set the I2C communications to the slave specified by the address
         # The commands for I2C dev using the ioctl functions are specified in
