@@ -9,7 +9,7 @@ if __name__ == '__main__':
     print('Press enter when you wish to set calibration for pH 7')
     raw_input()
 
-    sensor.calibraryMidPoint()
+    sensor.calibrateMidPoint()
 
     print('Calibration complete')
-    
+
