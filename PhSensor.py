@@ -42,6 +42,8 @@ class AtlasSensor:
     def clear_calibrarion(self):
         return self.__query("Cal,clear")
 
+    def get_slope(self):
+        return self.__query("Slope,?")
 
     def set_i2c_address(self, addr):
         # set the I2C communications to the slave specified by the address
