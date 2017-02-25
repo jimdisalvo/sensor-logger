@@ -6,7 +6,7 @@ import FakeSensor
 import PhSensor
 
 # Either FAKE or SENSOR
-SENSOR = 'FAKE'
+SENSOR = 'SENSOR'
 LOGGER = 'CONSOLE'
 
 def get_sensor():
