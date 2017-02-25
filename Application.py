@@ -19,6 +19,7 @@ def get_sensor():
 
 def get_logger():
     fileNameArg = sys.argv[1] if len(sys.argv) > 1 else 'ph-sensor'
+    print("Using filename: " + fileNameArg)
 
     fields = ["DateTime", "pH"]
     if LOGGER == 'CONSOLE':
